@@ -12,15 +12,15 @@ A simple PHP-based task management system built using custom MVC structure (no f
 
 ## Folder Structure
 
-''' taskmanagement/
+taskmanagement/
 ├── app/
-│ ├── Controller/
-│ ├── Model/
-│ └── Route.php
+│   ├── Controller/
+│   ├── Model/
+│   └── Route.php
 ├── view/
 ├── index.php
 ├── .gitignore
-├── README.md '''
+├── README.md
 
 
 ## Requirements
