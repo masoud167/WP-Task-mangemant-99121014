@@ -1,0 +1,29 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore vendor folder if you use Composer (not required yet)
+vendor/
+
+# Ignore config or environment files if used
+.env
+
+# Ignore IDE/editor folders
+.idea/
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore session/cache
+sessions/
+cache/
+
+# Ignore uploads (optional if storing files)
+uploads/
+
+# Ignore database export files
+*.sql
+
+# Ignore XAMPP or OS-specific files
+xampp/
