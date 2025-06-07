@@ -6,15 +6,32 @@ class AuthController {
         require 'view/auth/register.php';
     }
 
-    public function registerPost() {
-        $username = $_POST['username'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+public function registerPost() {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirm_password'];
 
-        $user = new User();
-        $user->create($username, $password);
-
-        header("Location: index.php?controller=auth&method=login");
+    if ($password !== $confirmPassword) {
+        die("Passwords do not match.");
     }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Invalid email format.");
+    }
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    $user = new User();
+    $result = $user->create($username, $email, $hashedPassword);
+
+    if ($result) {
+        header("Location: index.php?controller=auth&method=login");
+    } else {
+        echo "Failed to register. Username or email might already be taken.";
+    }
+}
+
 
     public function login() {
         require 'view/auth/login.php';

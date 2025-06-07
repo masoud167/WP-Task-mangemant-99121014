@@ -6,9 +6,9 @@ class User {
         $this->conn = new mysqli("localhost", "root", "", "task_manager");
     }
 
-    public function create($username, $password) {
-        $stmt = $this->conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $username, $password);
+    public function create($username, $email, $password) {
+        $stmt = $this->conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $email, $password);
         return $stmt->execute();
     }
 
