@@ -1,3 +1,6 @@
+<?php include 'view/layout/header.php'; ?>
+<?php include 'view/layout/navbar.php'; ?>
+
 <h2>Create New Task</h2>
 
 <form action="index.php?controller=task&method=store" method="POST">
@@ -12,3 +15,5 @@
     </select><br>
     <button type="submit">Add Task</button>
 </form>
+
+<?php include 'view/layout/footer.php'; ?>
