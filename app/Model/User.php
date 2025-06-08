@@ -3,7 +3,7 @@ class User {
     private $conn;
 
     public function __construct() {
-        $this->conn = new mysqli("localhost", "root", "", "task_manager");
+        $this->conn = new mysqli("localhost", "root", "", "task_mangement_db");
     }
 
     public function create($username, $email, $password) {
