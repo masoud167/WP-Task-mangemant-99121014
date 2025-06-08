@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 ?>
 
 <nav>
-    <a href="index.php">Home</a>
+    <a href="index.php?controller=dashboard&method=index">Home</a>
     <?php if (isset($_SESSION['user'])): ?>
         <a href="index.php?controller=task&method=index">Tasks</a>
         <a href="index.php?controller=auth&method=logout">Logout (<?= htmlspecialchars($_SESSION['user']['username']) ?>)</a>
