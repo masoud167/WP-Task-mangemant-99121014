@@ -2,23 +2,30 @@
 
 A simple PHP-based task management system built using custom MVC structure (no framework).
 
+
 ## Features
 
-- User registration with email and password confirmation
-- Secure login/logout system
-- Task creation with due date, priority, and status
-- Admin panel (optional)
-- Dashboard for managing personal tasks
+- User registration with email & password confirmation
+- User login/logout
+- Add, update, and mark tasks as done
+- Automatically move completed tasks to a `history` table
+- Failed tasks marked based on due date
+- Delete tasks from history
+- Navigation bar for users
+- Basic styling for improved UI
+
 
 ## Folder Structure
 
 taskmanagement/
   - app/
-    - Controller/
-    - Model/
-    - Route.php
-  - view/
-  - index.php
+    - Controller/ # Handles logic (AuthController, TaskController, etc.)
+    - Model/ # Database interaction (User.php, Task.php, etc.)
+    - Route.php # Core router
+  - view/ # View files (HTML + PHP)
+    - layout/ # View filse
+    - pages # Page views like login, register, dashboard, etc.
+  - index.php # Entery point
   - .gitignore
   - README.md
 
@@ -29,10 +36,3 @@ taskmanagement/
 - MySQL (or MariaDB)
 - Apache (XAMPP recommended)
 
-## Setup
-
-1. Place the project folder in `htdocs/` if using XAMPP.
-2. Create the database:
-
-```sql
-CREATE DATABASE task_manager;
