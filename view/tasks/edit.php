@@ -1,6 +1,9 @@
 <?php include __DIR__ . '/../layout/header.php'; ?>
 <?php include __DIR__ . '/../layout/navbar.php'; ?>
 
+
+
+<div class="container">
 <h2>Edit Task</h2>
 
 <form method="post" action="index.php?controller=task&method=update">
@@ -28,5 +31,6 @@
 
     <button type="submit">Save Changes</button>
 </form>
+</div>
 
-<?php include __DIR__ . '/../layout/footer.php'; ?>
+<?php include 'view/layout/footer.php'; ?>

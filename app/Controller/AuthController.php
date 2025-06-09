@@ -53,9 +53,15 @@ public function registerPost() {
         }
     }
 
-    public function logout() {
-        session_start();
+    public function logout()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
         session_destroy();
-        header("Location: index.php");
+        header('Location: index.php?controller=auth&method=login');
+        exit();
     }
+
 }

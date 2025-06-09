@@ -1,6 +1,8 @@
 <?php include __DIR__ . '/../layout/header.php'; ?>
 <?php include __DIR__ . '/../layout/navbar.php'; ?>
 
+
+<div class="container">
 <h2>Task History</h2>
 
 <table>
@@ -26,4 +28,6 @@
     <?php endforeach; ?>
 </table>
 
-<?php include __DIR__ . '/../layout/footer.php'; ?>
+</div>
+
+<?php include 'view/layout/footer.php'; ?>

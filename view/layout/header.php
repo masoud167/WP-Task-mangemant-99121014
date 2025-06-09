@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="/taskmanagement/public/css/style.css">
     <title>Task Management App</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }

@@ -1,6 +1,7 @@
 <?php include __DIR__ . '/../layout/header.php'; ?>
 <?php include __DIR__ . '/../layout/navbar.php'; ?>
 
+<div class="container">
 <h2>Your Tasks</h2>
 <a href="index.php?controller=task&method=create">+ Add Task</a>
 
@@ -29,5 +30,6 @@
         </tr>
     <?php endforeach; ?>
 </table>
+</div>
 
-<?php include __DIR__ . '/../layout/footer.php'; ?>
+<?php include 'view/layout/footer.php'; ?>
