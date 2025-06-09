@@ -1,10 +1,12 @@
-<?php
 
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once __DIR__ . '/../Model/Task.php';
 
 class TaskController {
     public function index() {
-        session_start();
         if (!isset($_SESSION['user'])) {
             header("Location: index.php?controller=auth&method=login");
             exit();
@@ -61,5 +63,21 @@ public function update()
     $taskModel->update($_POST);
     header("Location: index.php?controller=task&method=index");
 }
+public function history()
+{
+    $taskModel = new Task();
+    $userId = $_SESSION['user']['id'];
+    $history = $taskModel->getHistory($userId);
+    include 'view/tasks/history.php';
+}
+
+public function deleteHistory()
+{
+    $id = $_GET['id'];
+    $taskModel = new Task();
+    $taskModel->deleteHistory($id);
+    header("Location: index.php?controller=task&method=history");
+}
+
 
 }
